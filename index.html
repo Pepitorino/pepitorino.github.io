@@ -13,6 +13,7 @@
             height:100vh;
             overflow: hidden;
             background-color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         
         .wheel {
@@ -24,6 +25,7 @@
             top:50%;
             transform:translate(-50%, -50%);
             border-radius: 50%;
+            z-index: 2;
         }
         
         .circle {
@@ -108,8 +110,33 @@
             background-position: 50%;
         }
 
+        #modalvalo {
+            background-image: url(background-image/valorant-new-rank-ascendant-episode-5-act-1-1331152772.jpg);
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        #modaltetrio {
+            background-image: url(background-image/wp4478516.jpg);
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        #modaltekken{
+            background-image: url(background-image/tekken.jpg);
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
+        #modaloverwatch{
+            background-image: url(background-image/overwatch-game-all-heroes.jpg);
+            background-repeat: no-repeat;
+            background-position: 50%;
+        }
+
         [id^=modal]:target {
             display: block;
+            
         }
         input[type=checkbox] {
             position: absolute;
@@ -124,8 +151,9 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0.6;
+            opacity: 0.9;
             border-radius: 5px;
+            
         }
 
         .header {
@@ -181,11 +209,48 @@
         .logo {
             height:2em;
         }
+
+        #menu-background-pattern{
+            height:100vh;
+            width:100vw;
+
+            background-image: radial-gradient(
+                rgba(255, 255, 255, 0.1) 9%,
+                transparent 5%
+            );
+            background-position: 0% 0%;
+            background-size: 12vmin 12vmin;
+
+            position:absolute;
+            left:0px;
+            top:0px;
+            z-index: 0;
+
+            transition:opacity 800ms ease;
+            background-size: 800ms ease;
+        }
+
+        .contenttext{
+            margin: 1em;
+        }
+
+        .modalcontent>div{
+            width:50%;
+            padding:1em;
+        }
+
+        .intextlogo{
+            height: 1em;
+        }
+
+        .accpic {
+            width:100%
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script>
 </head>
 <body>
-    <div class="wheel">
+    <div class="wheel" id="wheel">
         <a class="circle" id="lol" href="#modallol"></a>
         <a class="circle" id="valo" href="#modalvalo"></a>
         <a class="circle" id="tetrio" href="#modaltetrio"></a>
@@ -201,11 +266,13 @@
                     <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
-                    <div class="accpic">
-
+                    <div>
+                        <img src="accountpics/Screenshot 2022-11-08 231605.png" alt="" class="accpic">
                     </div>
                     <div class="content">
-
+                    <p class="contenttext">I started playing League of Legends when I was about 10 years old as a way to pass the time with my siblings. After a couple months I eventually unlocked ranked and got addicted to the grind.
+                        As I grew, so did my competitive drive for the game. Over the past 7 seasons I've played over 8000 games. For the first 4 years my goal of ultimately reaching the competitive ladder, which is composed of the top 1000 players was nothing more than a dream
+                        But eventually, I had made it to a rank and skill level at which that goal seemed possible, so I started grinding it out. And after nearly 8 years of playing the game, I reached the rank of Masters <img src="/icon/Season_2022_-_Master.webp" class="intextlogo"> last July 9, 2022, at 1:50 AM.</p>
                     </div>
                 </div>
             </div>
@@ -214,16 +281,18 @@
             <div class="wrapper">
                 <div class="header flexcontainer">
                     <div class="header-left">
-                        <h2 class="logotext"></h2>
+                        <img src="logos/Valorant_pink_version_logo.svg.png" alt="Valorant" class="logo">
                     </div>
-                    <div class="header-right"><a href="#">&times;</a></div>
+                    <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
-                    <div class="accpic">
-
+                    <div>
+                        <img src="accountpics/image.png" alt="" class="accpic">
                     </div>
                     <div class="content">
-
+                        <p class="contenttext">I started playing Valorant in the closed beta, though I found it fun at first, the game got easily repetitive and it just felt like it was draining my brain
+                            so I quit before any real high ranks, but not before reaching Diamond <img src="icon/Diamond_3_Rank.webp" class="intextlogo"> just to prove to myself that I was at least decent at the game.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -232,16 +301,19 @@
             <div class="wrapper">
                 <div class="header flexcontainer">
                     <div class="header-left">
-                        <h2 class="logotext"></h2>
+                        <img src="logos/logo.png" alt="" class="logo" style="background-color:black">
                     </div>
-                    <div class="header-right"><a href="#">&times;</a></div>
+                    <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
                     <div class="accpic">
-
+                        <img src="accountpics/tetrio.png" alt="" class="accpic">
                     </div>
                     <div class="content">
-
+                        <p class="contenttext">My Tetris journey started where everyone else's started at like 5 years old just putting blocks on top of each other. But a little more than a year ago I found a neat 
+                            client for this block stacking game called Tetr.io, and like a lot of other people I ended up addicted. I eventually started grinding out the Blitz and Versus modes, and reached a rank of <img src="icon/ss.png" alt="" class="intextlogo">
+                            and a Blitz Score of 600k. As of right now, it is the only game I play seriously at a good(ish) level.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -250,16 +322,20 @@
             <div class="wrapper">
                 <div class="header flexcontainer">
                     <div class="header-left">
-                        <h2 class="logotext"></h2>
+                        <img src="/logos/Tekken-Logo.png" alt="" class="logo">
                     </div>
-                    <div class="header-right"><a href="#">&times;</a></div>
+                    <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
-                    <div class="accpic">
-
+                    <div>
+                        <img src="accountpics/tekken.png" alt="" style="width:90%;">
                     </div>
                     <div class="content">
-
+                        <p class="contenttext">I don't have as much stuff to show for Tekken as it's been a long time, but I did reach Eternal Ruler online, which is one rank off blue ranks, which is the third highest division of ranks.
+                            Aside from that, most of my achievements have been in the past, I've played in quite a few tourneys versus some of the best players in the Philippines, and at one point I was one of the best players in Katipunan.
+                            For the most part though I was overshadowed by my brother, and I was usually just known as his brother. One of the other things I was (somewhat) known for though was my execution
+                            which was heavily contrasted by my absolute lack of fundamentals of the game, giving me a playstyle that could be described as monkey-like.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -268,16 +344,19 @@
             <div class="wrapper">
                 <div class="header flexcontainer">
                     <div class="header-left">
-                        <h2 class="logotext"></h2>
+                        <img src="logos/overwatch.png" alt="" class="logo">
                     </div>
-                    <div class="header-right"><a href="#">&times;</a></div>
+                    <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
                     <div class="accpic">
-
+                        <img src="accountpics/overwatch.png" alt="" class="accpic">
                     </div>
                     <div class="content">
-
+                        <p class="contenttext">I started playing Overwatch when it came out, never took it quite seriously though.
+                            With its sequel out now though, I started playing it a bit more competitively, and as of right now I'm just hoping to reach Diamond
+                            so that I can stop playing the game.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -288,19 +367,22 @@
                     <div class="header-left">
                         <h2 class="logotext"></h2>
                     </div>
-                    <div class="header-right"><a href="#">&times;</a></div>
+                    <div class="header-right"><a href="#">Close</a></div>
                 </div>
                 <div class="modalcontent flexcontainer">
-                    <div class="accpic">
-
-                    </div>
                     <div class="content">
-
+                        <p class="contenttext">I've been playing videogames for as long as I can remember, the game that I could say I was actually good at first though is 
+                            Counter Strike 1.6. I think that's where I'd say I found my competitive drive especially in terms of videogames, as I'd spend hours trying to beat my brother
+                            in a 1v1 on an aim_map. Over the years I've played quite a lot of games, though despite how important it's been in my life, nowadays I wouldn't really call it a hobby or interest anymore.
+                            For the most part I'm satisfied with where I'm at in terms of skill in multiplayer videogames, and singleplayer videogames don't really interest me anymore as the just dont provide the same dopamine rush
+                            that they did all those years ago. I'm still incredibly happy and thankful to this form of media and I think videogames are one of the best things I've ever gotten to experience, it's shaped a lot of me.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div id="menu-background-pattern"></div>
     <script>
         let theta=Math.PI / 3.0;
         let new_theta = 0.0;
@@ -323,9 +405,6 @@
             circle.style.left = `${center.x + new_x}px`;
             circle.style.top = `${center.y + new_y}px`;
         });
-
-    </script>
-    <script>
 
     </script>
 </body>
